@@ -1,8 +1,8 @@
 'use client'
-import { useState } from 'react';
+import { useCounter } from "./context/CounterProvider";
 
 const Counter = ({ children }: {children: React.ReactNode}) => {
-    const [count, setCount] = useState<number>(0);
+    const [count, setCount] = useCounter();
     const increment = () => {
         setCount((prev) => prev + 1);
     };

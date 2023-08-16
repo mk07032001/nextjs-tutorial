@@ -1,5 +1,6 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
+import { CounterProvider } from './context/CounterProvider'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,8 +11,6 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  team,
-  analytics,
 }: {
   children: React.ReactNode,
   team: React.ReactNode,
@@ -20,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>{children}</div>
-        <div>{team}</div>
-        <div>{analytics}</div>
+        <CounterProvider>{children}</CounterProvider>
       </body>
     </html>
   );
